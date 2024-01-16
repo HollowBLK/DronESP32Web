@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE HTML><html>
+<head>
+  <title>ESP Web Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
+</head>
+<body>
+  <div class="topnav">
+    <h1><i class="far fa-compass"></i> MPU6050 <i class="far fa-compass"></i></h1>
+  </div>
+  <div class="content">
+    <div class="cards">
+      <div class="card">
+        <p class="card-title">GYROSCOPIO</p>
+        <p><span class="reading">X: <span id="gyroX"></span> rad</span></p>
+        <p><span class="reading">Y: <span id="gyroY"></span> rad</span></p>
+        <p><span class="reading">Z: <span id="gyroZ"></span> rad</span></p>
+      </div>
+      <div class="card">
+        <p class="card-title">ACCELEROMETRO</p>
+        <p><span class="reading">X: <span id="accX"></span> ms<sup>2</sup></span></p>
+        <p><span class="reading">Y: <span id="accY"></span> ms<sup>2</sup></span></p>
+        <p><span class="reading">Z: <span id="accZ"></span> ms<sup>2</sup></span></p>
+      </div>
+      <div class="card">
+        <p class="card-title">TEMPERATURA</p>
+        <p><span class="reading"><span id="temp"></span> &deg;C</span></p>
+        <p class="card-title">ANIMACION 3D</p>
+        <button id="reset" onclick="resetPosition(this)">RESET POSITION</button>
+        <button id="resetX" onclick="resetPosition(this)">X</button>
+        <button id="resetY" onclick="resetPosition(this)">Y</button>
+        <button id="resetZ" onclick="resetPosition(this)">Z</button>
+      </div>
+    </div>
+    <div class="cube-content">
+      <div id="3Dcube"></div>
+    </div>
+    <div class="BarraBox">
+      	<h2>WebESCCont v2 ESC PWM Frequency Generator</h2>
+  	<p><span id="textslider_values">%SLIDERVALUES%</span></p>
+  	<p><input type="range" onchange="updateSliderPWM(this, 1)" id="pwmSlider1" min=pot_min max=pot_max value="%SLIDERVALUE1%" step="1" class="slider"></p>
+  	<p><input type="range" onchange="updateSliderPWM(this, 2)" id="pwmSlider2" min=pot_min max=pot_max value="%SLIDERVALUE2%" step="1" class="slider"></p>
+  	<p><input type="range" onchange="updateSliderPWM(this, 3)" id="pwmSlider3" min=pot_min max=pot_max value="%SLIDERVALUE3%" step="1" class="slider"></p>
+  	<p><input type="range" onchange="updateSliderPWM(this, 4)" id="pwmSlider4" min=pot_min max=pot_max value="%SLIDERVALUE4%" step="1" class="slider"></p>
+  	<p><input type="range" onchange="updateAllMotors(this)" id="pwmSliderAll" min=pot_min max=pot_max value="%SLIDERVALUEALL%" step="1" class="slider"></p>
+  	<br><hr><br>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
